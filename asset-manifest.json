@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Dashboard-with-theme-switcher--REACT-SASS/static/css/main.5f7f3332.css",
+    "main.js": "/Dashboard-with-theme-switcher--REACT-SASS/static/js/main.dd0a5a00.js",
+    "index.html": "/Dashboard-with-theme-switcher--REACT-SASS/index.html",
+    "main.5f7f3332.css.map": "/Dashboard-with-theme-switcher--REACT-SASS/static/css/main.5f7f3332.css.map",
+    "main.dd0a5a00.js.map": "/Dashboard-with-theme-switcher--REACT-SASS/static/js/main.dd0a5a00.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f7f3332.css",
+    "static/js/main.dd0a5a00.js"
+  ]
+}
