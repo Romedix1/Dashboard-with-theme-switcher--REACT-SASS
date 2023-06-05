@@ -1,0 +1,231 @@
+.smaller-card-section {
+    width: 90vw;
+    padding-bottom: 2rem;
+
+    @include tabletS
+    {
+        display: grid;
+        place-content: center;
+    }
+
+    @include laptop
+    {
+        width: 100vw;
+        place-content: normal;
+    }
+    
+    .smaller-card--header
+    {
+        @include laptop
+        {
+            margin-left: 0.5rem;
+        }
+
+        @include desktop
+        {
+            margin-left: 3rem;
+        }
+    }
+
+    .smaller-card--cards-main-container
+    {
+        @include laptop
+        {
+            display: grid;
+            grid-template: auto / repeat(4,1fr);
+        }
+
+        @include desktop
+        {
+            width: 92vw;
+            margin: auto;
+        }
+
+    }
+        .smaller-card--container
+        {
+                padding: 6vw;
+                border-radius: 2vw;
+                margin-top: 1.4rem;
+                cursor: pointer;
+
+                @include tabletS
+                {
+                    width: 60vw;
+                }
+
+                @include laptop
+                {
+                    width: 92%;
+                    margin: 1rem 0rem 0rem 0.3rem;
+                    padding: 1.5vw;
+                    border-radius: 1vw;
+                }
+
+                @include desktop
+                {
+                    width: 95%;
+                }
+
+                .smaller-card--flex
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .smaller-card--views-text
+                    {
+                        font-size: 0.7rem;
+                        font-weight: 700;
+
+                        @include laptop
+                        {
+                            font-size: 0.5rem;
+                        }
+
+                        @include desktop
+                        {
+                            font-size: 0.7rem;
+                            margin-bottom: 1rem;
+                        }
+                    }
+
+                    .smaller-card--views-value
+                    {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        margin-top: 1rem;
+
+                        @include laptop
+                        {
+                            font-size: 0.9rem;
+                        }
+
+                        @include desktop
+                        {
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                    .smaller-card--platform-img
+                    {
+                        width: 1rem;
+
+                        @include laptop
+                        {
+                            width: 0.7rem;
+                        }
+
+                        @include desktop
+                        {
+                            width: 1.2rem;
+                        }
+                    }
+
+                    div
+                    {
+                        margin-top: 1.55rem;
+                        display: flex;
+                        align-items: center;
+
+                        img 
+                        {
+                            width: 0.35rem;
+                            margin-right: 0.2rem;
+
+                            @include desktop
+                            {
+                                width: 0.5rem;
+                            }
+                        }
+
+                        p
+                        {
+                            font-size: 0.6rem;
+
+                            @include desktop
+                            {
+                                font-size: 0.7rem;
+                            }
+                        }
+
+                        .smaller-card--minus-ratio
+                        {
+                            color: $BrightRed;
+                        }
+
+                        .smaller-card--plus-ratio
+                        {
+                            color: $LimeGreen;
+                        }
+                    }
+                }
+        }
+}
+
+// LIGHT THEME
+
+.light {
+
+    .smaller-card-section {
+    
+        .smaller-card--header {
+            color: $DarkGrayishBlue-Text;
+        }
+    
+            .smaller-card--container
+            {
+                    background-color: $LightGrayishBlue-CardBG;
+    
+                    &:hover
+                    {
+                       background-color:  $VeryPaleBlue-TopBGPatter;
+                    }
+
+                    .smaller-card--flex
+                    {
+    
+                        .smaller-card--views-text
+                        {
+                            color: $DarkGrayishBlue-Text;
+                        }
+                    }
+            }
+    }
+}
+
+// DARK THEME
+
+.dark {
+
+    .smaller-card-section {
+    
+        .smaller-card--header {
+            color: $White-Text;
+        }
+
+        .smaller-card--container
+        {
+                background-color: $DarkDesaturatedBlue-CardBG;
+
+                &:hover
+                {
+                    background-color:  hsl(229, 11%, 28%);
+                }
+
+                .smaller-card--flex
+                {
+    
+                    .smaller-card--views-text
+                    {
+                        color: $DesaturatedBlue-Text;
+                    }     
+
+                    .smaller-card--views-value
+                    {
+                        color: $White-Text;
+                    }
+                }  
+        }
+    }
+}

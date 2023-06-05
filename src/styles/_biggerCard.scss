@@ -1,0 +1,284 @@
+@mixin flex() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bigger-cards-section
+{
+    width: 100%;
+
+    @include tabletS
+    {
+        display: grid;
+        place-content: center;
+    }
+
+    @include laptop 
+    {
+        display: flex;
+    }
+}
+
+.bigger-card--container{
+    display: grid;
+    place-content: center;
+    border-radius: 2vw;
+    width: 90vw;
+    position: relative;
+    top: -2.5rem;
+    margin-top: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    
+    @include tabletS
+    {
+        width: 60vw;
+    }
+
+    @include laptop 
+    {
+        top: -1.5rem;
+        width: 25%;
+        margin: 0 0.5rem
+    }
+
+    @include desktop
+    {
+        width: 20%;
+        border-radius: 1vw;
+    }
+
+    .bigger-card--user-name
+    {
+        @include flex;
+        margin-top: 1.5rem;
+
+        @include laptop
+        {
+            margin-top: 1.1rem;
+        }
+
+        @include desktop
+        {
+            margin-top: 1.7rem;
+        }
+
+        img 
+        {
+            width: 1rem;
+            margin-right: 0.3rem;
+
+            @include laptop 
+            {
+                width: 0.8rem;
+            }
+        
+            @include desktop
+            {
+                width: 1.2rem;
+            }
+        }
+
+        p 
+        {
+            font-size: 0.5rem;
+            font-weight: 700;
+
+            @include laptop 
+            {
+                font-size: 0.45rem;
+            }
+
+            @include desktop
+            {
+                font-size: 0.6rem;
+            }
+        
+            &::before
+            {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 0.35rem;
+                display: block;
+
+                
+
+            }
+        }
+
+        .twitter-color::before
+        {
+            background-color: $Twitter;
+        }
+
+        .facebook-color::before
+        {
+            background-color: $Facebook;
+        }
+
+        .youtube-color::before
+        {
+            background-color: $YouTube;
+        }
+
+        .instagram-color::before
+        {
+            background: $Instagram;
+        }
+    }
+
+    .bigger-cards--followers-value
+    {
+        margin-top: 0.9rem;
+        text-align: center;
+        font-size: 2rem;
+
+        @include laptop
+        {
+            font-size: 1.6rem;
+        }
+
+        @include desktop
+        {
+            font-size: 2.3rem;
+        }
+
+    }
+
+    .bigger-cards--followers-text
+    {
+        text-align: center;
+        font-size: 0.6rem;
+        letter-spacing: 0.15rem;
+        text-transform: uppercase;
+
+        @include laptop 
+        {
+            font-size: 0.5rem
+        }
+
+        @include desktop
+        {
+            font-size: 0.7rem
+        }
+    }
+
+    .bigger-card--value-box
+    {
+        @include flex;
+        margin-top: 1rem;
+        padding-bottom: 1.5rem;
+
+        img 
+        {
+            width: 0.5rem;
+
+            @include laptop
+            {
+                width: 0.4rem;
+            }
+
+            @include desktop
+            {
+                width: 0.6rem;
+            }
+        }
+
+        p
+        {
+            font-size: 0.6rem;
+            margin-left: 0.1rem;
+            font-weight: 700;
+
+            @include laptop
+            {
+                font-size: 0.5rem;
+            }
+
+            @include desktop
+            {
+                font-size: 0.7rem;
+            }
+        }
+
+        .bigger-card--plus-ratio
+        {
+            color: $LimeGreen;
+        }
+
+        .bigger-card--minus-ratio
+        {
+            color: $BrightRed;
+        }
+    }
+}
+
+// LIGHT THEME
+
+
+.light {
+    .bigger-card--container{
+        background-color: $LightGrayishBlue-CardBG;
+
+        &:hover
+        {
+            background-color:  $VeryPaleBlue-TopBGPatter;
+        }
+    
+        .bigger-card--user-name
+        {
+    
+            p 
+            {
+                color: $DarkGrayishBlue-Text;
+            }
+        }
+    
+        .bigger-cards--followers-value
+        {
+            color: $VeryDarkBlue-Text;
+        }
+    
+        .bigger-cards--followers-text
+        {
+            color: $DarkGrayishBlue-Text;
+        }
+    }
+}
+
+// DARK THEME
+
+.dark {
+    .bigger-card--container{
+        background-color: $DarkDesaturatedBlue-CardBG;
+    
+        &:hover
+        {
+            background-color:  hsl(229, 11%, 28%);
+        }
+    
+
+        .bigger-card--user-name
+        {
+    
+            p 
+            {
+                color: $DesaturatedBlue-Text;
+            }
+        }
+    
+        .bigger-cards--followers-value
+        {
+            color: $White-Text;
+        }
+    
+        .bigger-cards--followers-text
+        {
+            color: $DesaturatedBlue-Text;
+        }
+    }
+}

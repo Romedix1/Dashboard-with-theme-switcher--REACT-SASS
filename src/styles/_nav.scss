@@ -1,0 +1,218 @@
+.nav {
+    padding-top: 1.3rem;
+    padding-bottom: 3rem;
+    border-radius: 0 0 10vw 10vw;
+    width: 100%;
+
+    @include laptop
+    {
+        display: flex;
+    }
+
+    .nav--desktop-left
+    {
+        @include laptop
+        {
+            width: 70%;
+            margin-left: 2rem;
+        }
+
+    }
+
+    &--header
+    {
+        margin-left: 0.9rem;
+    
+    }
+
+    &--pharagraph
+    {
+        margin-top: 0.1rem;
+        margin-left: 0.9rem;
+        font-size: 0.6rem;
+        font-weight: 700;
+
+        &::after
+        {
+            display: block;
+            content: "";
+            width: 95%;
+            height: 0.1vw;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+
+            @include laptop
+            {
+                display: none;
+            }
+        }
+    }
+
+    &--dark-mode-container
+    {
+        margin: auto;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        @include tabletS
+        {
+            margin-left: 0.95rem;
+        }
+
+        @include laptop
+        {
+            justify-content: right;
+            align-items: center;
+            margin-right: 1rem;
+        }
+
+
+        input[type='checkbox']
+        {
+            display: none;
+        }
+
+        input[type='checkbox'] + .checkbox-element
+        {
+            display: block;
+            position: relative;
+            width: 2rem;
+            height: 1rem;
+            border-radius: 10vw;
+            position: relative;
+            cursor: pointer;
+            transition: 0.6s;
+
+            @include laptop
+            {
+                margin-left: 0.5rem;
+            }
+
+            @include desktop
+            {
+                margin-right: 2rem;
+            }
+
+
+        }
+
+        input[type='checkbox'] + .checkbox-element::before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0.1rem;
+            right: 0.15rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50vw;
+            transition: 0.6s;
+        }
+
+        input[type='checkbox']:checked + .checkbox-element::before
+        {
+            right: 1.05rem;
+        }
+
+        .nav--dark-mode-label
+        {
+            font-size: 0.6rem;
+            font-weight: 700;
+        }
+    }
+}
+
+// LIGHT THEME
+
+.light
+{
+    .nav {
+    
+        &--header
+        {
+            color: $VeryDarkBlue-Text;
+        }
+    
+        &--pharagraph
+        {
+            color: $DarkGrayishBlue-Text;
+    
+            &::after
+            {
+                background-color: $VeryDarkBlue-Text;
+            }
+        }
+    
+        &--dark-mode-container
+        {
+            input[type='checkbox'] + .checkbox-element
+            {
+                background: $ToggleLight;
+            }
+    
+            input[type='checkbox'] + .checkbox-element::before
+            {
+                background-color: $White-BG;
+            }
+    
+            input[type='checkbox']:checked + .checkbox-element
+            {
+                background: $ToggleDark;
+            }
+    
+            .nav--dark-mode-label
+            {
+                color: $DarkGrayishBlue-Text;
+            }
+        }
+    }
+}
+
+// DARK THEME
+
+.dark
+{
+    .nav {
+        background-color: $VeryDarkBlue-TopBGPattern;
+
+        &--header
+        {
+            color: $White-Text;
+        }
+    
+        &--pharagraph
+        {
+            color: $DarkGrayishBlue-Text;
+    
+            &::after
+            {
+                background-color: $DarkGrayishBlue-Text;
+            }
+        }
+    
+        &--dark-mode-container
+        {
+            input[type='checkbox'] + .checkbox-element
+            {
+                background: $ToggleLight;
+            }
+    
+            input[type='checkbox'] + .checkbox-element::before
+            {
+                background-color: $VeryDarkBlue-BG;
+            }
+    
+            input[type='checkbox']:checked + .checkbox-element
+            {
+                background: $ToggleDark;
+            }
+    
+            .nav--dark-mode-label
+            {
+                color: $DarkGrayishBlue-Text;
+            }
+        }
+    }
+}

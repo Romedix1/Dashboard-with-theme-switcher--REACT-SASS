@@ -1,0 +1,32 @@
+@import 'config';
+@import 'nav';
+@import 'biggerCard';
+@import 'smallerCard';
+
+body
+{
+    overflow-x: hidden;
+}
+
+main
+{
+    width: 100vw;
+}
+
+.container
+{
+    width: 100vw;
+    display: grid;
+    place-content: center;
+
+    @include laptop 
+    {
+        place-content: normal;
+    }
+
+    @include desktop
+    {
+        place-content: center;
+
+    }
+}
